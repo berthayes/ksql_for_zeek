@@ -1,5 +1,7 @@
+# KSQL for Zeek
+### How I'm currently sending Zeek IDS data directly Apache Kafka and running KSQL queries on it
 
-Download Bro 2.6 
+Download Bro
 https://www.zeek.org/downloads/bro-2.6.4.tar.gz
 * Note Zeek 3.0 will probably work?
 * Bert is not an early adopter
