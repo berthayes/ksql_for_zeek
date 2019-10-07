@@ -9,6 +9,7 @@ https://www.zeek.org/downloads/bro-2.6.4.tar.gz
 * Bert is not an early adopter
 
 Compile Bro from source
+* https://docs.zeek.org/en/stable/install/install.html
 * might not be absolutely necessary as long as you HAVE the source for the version you're using
 * E.g. if using Deb/RPM, make sure you also have the source package
 
