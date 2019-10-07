@@ -1,4 +1,4 @@
-# KSQL for Zeek
+# KSQL for Zeek/Bro
 ### How I'm currently sending Zeek IDS data directly Apache Kafka and running KSQL queries on it
 
 
