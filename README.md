@@ -3,23 +3,23 @@
 
 
 ### Configure Bro
-Download Bro
+1. Download Bro
 https://www.zeek.org/downloads/bro-2.6.4.tar.gz
-* Note Zeek 3.0 will probably work?
+* Note: Zeek 3.0 will probably work - not tested yet
 * Bert is not an early adopter
 
-Compile Bro from source
+1. Compile Bro from source
 * https://docs.zeek.org/en/stable/install/install.html
 * might not be absolutely necessary as long as you HAVE the source for the version you're using
 * E.g. if using Deb/RPM, make sure you also have the source package
 
 
-Download Apache Metron plugin
+1. Download Apache Metron plugin
 * https://github.com/apache/metron-bro-plugin-kafka
 * Follow directions on readme to install plugin
 
 
-Edit $BRO_DIR/share/bro/site/local.bro
+1. Edit $BRO_DIR/share/bro/site/local.bro
 (.e.g. /usr/local/bro/share/bro/site/local.bro)
 
 Add/edit the following lines (json might be in there already):
@@ -32,17 +32,17 @@ json-logs ensures JSON formatting of data
 send-to-kafka is your config file for sending data to Kafka.
 
 
-Create this file for Kafka logging - e.g. /usr/local/bro/share/bro/site/send-to-kafka.bro
+1. Create this file for Kafka logging - e.g. /usr/local/bro/share/bro/site/send-to-kafka.bro
 * see https://github.com/berthayes/ksql_for_zeek/blob/master/send-to-kafka.bro
 
 
-For each log type in Bro/Zeek, create a topic in Kafka
+1. For each log type in Bro/Zeek, create a topic in Kafka
 e.g, DNS, HTTP, SSL, etc.
 
-After topics are created and log file editing is done, reload/restart Bro/Zeek with
+1. After topics are created and log file editing is done, reload/restart Bro/Zeek with
 ``` #broctl deploy ```
 
-Make sure you're getting events in Kafka
+1. Make sure you're getting events in Kafka
 
 ### Create a stream with a KSQL query
 Note that the event is nested JSON, so you need to use STRUCT to create the event value
