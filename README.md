@@ -71,7 +71,7 @@ Perhaps this stream is formatted for your SIEM?
 * see https://github.com/berthayes/ksql_for_zeek/blob/master/create_clean_dns_stream.sql
 
 Now let's query the clean DNS stream
-Here's an example - look for IPV6 hostname lookups:
+Here's an example - look for successful IPV6 hostname lookups:
 
 ```
 ksql> SELECT SRC_IP, Q, QTYPE_NAME, DEST_IP, DEST_PORT, ANSWERS FROM CLEAN_DNS WHERE QTYPE_NAME='AAAA' AND ANSWERS IS NOT NULL;
