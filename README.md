@@ -29,8 +29,8 @@ Add/edit the following lines (json might be in there already):
 @load send-to-kafka
 ```
 
-json-logs ensures JSON formatting of data
-send-to-kafka is your config file for sending data to Kafka.
+* json-logs ensures JSON formatting of data
+* send-to-kafka is your config file for sending data to Kafka.
 
 #### Create Bro Config file to send to Kafka
 Create this file for Kafka logging - e.g. /usr/local/bro/share/bro/site/send-to-kafka.bro
