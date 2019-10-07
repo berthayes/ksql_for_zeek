@@ -60,7 +60,7 @@ ksql> SELECT DNS->"id.orig_h", DNS->"query", DNS->QTYPE_NAME, DNS->"id.resp_h", 
 192.168.1.10 | api-8abd3fd5.duosecurity.com | A | 192.168.1.1 | 53
 ```
 
-Because of the STRUCT required of nested JSON, we need to use the -> and because of the dots in some fields,
+Because of the STRUCT required of nested JSON, we need to use the -> operator and because of the dots in some fields,
 we need to put them in quotes.  Unsightly and problematic, because KSQL
 has a hard time with dots in the field names if it's not in a STRUCT.
 
