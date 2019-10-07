@@ -1,0 +1,32 @@
+{
+  "dns": {
+    "ts": 1570422153.453787,
+    "uid": "CGbcWu4RIICJ6l2hC2",
+    "id.orig_h": "192.168.1.10",
+    "id.orig_p": 50988,
+    "id.resp_h": "192.168.1.1",
+    "id.resp_p": 53,
+    "proto": "udp",
+    "trans_id": 26613,
+    "rtt": 0.031966,
+    "query": "api-8abd3fd5.duosecurity.com",
+    "qclass": 1,
+    "qclass_name": "C_INTERNET",
+    "qtype": 1,
+    "qtype_name": "A",
+    "rcode": 0,
+    "rcode_name": "NOERROR",
+    "AA": false,
+    "TC": false,
+    "RD": true,
+    "RA": true,
+    "Z": 0,
+    "answers": [
+      "52.32.63.138"
+    ],
+    "TTLs": [
+      0
+    ],
+    "rejected": false
+  }
+}

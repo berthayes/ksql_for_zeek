@@ -1,0 +1,43 @@
+[
+  {
+    "topic": "dns",
+    "partition": 0,
+    "offset": 119,
+    "timestamp": 1569633898647,
+    "timestampType": "CREATE_TIME",
+    "headers": [],
+    "key": null,
+    "value": {
+      "dns": {
+        "ts": 1569633897.781769,
+        "uid": "CnZYRp3NtuzebvQUlb",
+        "id.orig_h": "192.168.1.10",
+        "id.orig_p": 51335,
+        "id.resp_h": "192.168.1.1",
+        "id.resp_p": 53,
+        "proto": "udp",
+        "trans_id": 49624,
+        "rtt": 0.03203,
+        "query": "api-8abd3fd5.duosecurity.com",
+        "qclass": 1,
+        "qclass_name": "C_INTERNET",
+        "qtype": 1,
+        "qtype_name": "A",
+        "rcode": 0,
+        "rcode_name": "NOERROR",
+        "AA": false,
+        "TC": false,
+        "RD": true,
+        "RA": true,
+        "Z": 0,
+        "answers": [
+          "52.32.63.138"
+        ],
+        "TTLs": [
+          60
+        ],
+        "rejected": false
+      }
+    }
+  }
+]
