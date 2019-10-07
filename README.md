@@ -8,7 +8,7 @@ https://www.zeek.org/downloads/bro-2.6.4.tar.gz
 * Note Zeek 3.0 will probably work?
 * Bert is not an early adopter
 
-Compiled Bro from source
+Compile Bro from source
 * might not be absolutely necessary as long as you HAVE the source for the version you're using
 * E.g. if using Deb/RPM, make sure you also have the source package
 
@@ -45,7 +45,7 @@ Make sure you're getting events in Kafka
 
 ### Create a stream with a KSQL query
 Note that the event is nested JSON, so you need to use STRUCT to create the event value
-* see create_bro_dns_stream.sql
+* see https://github.com/berthayes/ksql_for_zeek/blob/master/create_bro_dns_stream.sql
 
 Now you can query the stream with KSQL
 
