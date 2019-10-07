@@ -63,7 +63,7 @@ ksql> SELECT DNS->"id.orig_h", DNS->"query", DNS->QTYPE_NAME, DNS->"id.resp_h", 
 ```
 
 Because of the STRUCT required of nested JSON, we need to use the -> operator and because of the dots in some fields,
-we need to put them in quotes.  Unsightly and problematic, because KSQL
+we need to put them in quotes.  Unsightly and problematic, but required because KSQL
 has a hard time with dots in the field names if it's not in a STRUCT.
 
 So let's create another stream that is a little prettier and easier to work with.
