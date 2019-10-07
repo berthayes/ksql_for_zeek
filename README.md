@@ -1,6 +1,8 @@
 # KSQL for Zeek
 ### How I'm currently sending Zeek IDS data directly Apache Kafka and running KSQL queries on it
 
+
+### Configure Bro
 Download Bro
 https://www.zeek.org/downloads/bro-2.6.4.tar.gz
 * Note Zeek 3.0 will probably work?
@@ -19,15 +21,19 @@ Download Apache Metron plugin
 Edit $BRO_DIR/share/bro/site/local.bro
 (.e.g. /usr/local/bro/share/bro/site/local.bro)
 
-Make sure JSON formatting for logs is turned on - check for this line in local.bro
+Add/edit the following lines (json might be in there already):
+```
 @load policy/tuning/json-logs
+@load send-to-kafka
+```
+
+json-logs ensures JSON formatting of data
+send-to-kafka is your config file for sending data to Kafka.
 
 
-Sending logs to Kafka topics is easier to manage if it's done in a separate file
+Create this file for Kafka logging - e.g. /usr/local/bro/share/bro/site/send-to-kafka.bro
+* see https://github.com/berthayes/ksql_for_zeek/blob/master/send-to-kafka.bro
 
-Create a file for Kafka logging - e.g. /usr/local/bro/share/bro/site/send-to-kafka.bro
-include this file in you local.bro as above
-@load send-to-lab-kafka
 
 For each log type in Bro/Zeek, create a topic in Kafka
 e.g, DNS, HTTP, SSL, etc.
@@ -37,7 +43,7 @@ After topics are created and log file editing is done, reload/restart Bro/Zeek w
 
 Make sure you're getting events in Kafka
 
-Create a stream with a KSQL query
+### Create a stream with a KSQL query
 Note that the event is nested JSON, so you need to use STRUCT to create the event value
 * see create_bro_dns_stream.sql
 
