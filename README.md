@@ -66,7 +66,7 @@ has a hard time with dots in the field names if it's not in a STRUCT.
 
 So let's create another stream that is a little prettier and easier to work with.
 Perhaps this stream is formatted for your SIEM?
-	* see create_clean_dns_stream.sql
+* see https://github.com/berthayes/ksql_for_zeek/blob/master/create_clean_dns_stream.sql
 
 Now let's query the clean DNS stream
 Here's an example - look for IPV6 hostname lookups:
