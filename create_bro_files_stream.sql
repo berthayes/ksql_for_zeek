@@ -1,0 +1,21 @@
+CREATE STREAM files ( \
+files STRUCT< \
+ts DOUBLE(16,6), \
+fuid STRING, \
+tx_hosts ARRAY<STRING>, \
+rx_hosts ARRAY<VARCHAR>, \
+conn_uids ARRAY<STRING>, \
+source STRING, \
+depth INTEGER, \
+analyzers ARRAY<STRING>, \
+mime_type VARCHAR, \
+duration INTEGER, \
+local_orig BOOLEAN, \
+is_orig BOOLEAN, \
+seen_bytes INTEGER, \
+missing_bytes INTEGER, \
+overflow_bytes INTEGER, \
+timeout BOOLEAN, \
+md5 STRING, \
+sha1 STRING>) \
+WITH (KAFKA_TOPIC='files', VALUE_FORMAT='JSON');
