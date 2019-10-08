@@ -86,5 +86,13 @@ event bro_init()
         $path = "ssl"
     ];
     Log::add_filter(SSL::LOG, ssl_filter);
+
+    # handle known_services
+    local known_services_filter: Log::Filter = [
+	$name = "kafka-known-services",
+	$writer = Log::WRITER_KAFKAWRITER,
+	$path = "known_services"
+    ];
+    Log::add_filter(Known::SERVICES_LOG, known_services_filter);
 }
 
