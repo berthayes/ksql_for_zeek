@@ -1,4 +1,4 @@
-# KSQL for Zeek
+# KSQL for Zeek/Bro
 ### How I'm currently sending Zeek IDS data directly Apache Kafka and running KSQL queries on it
 
 
@@ -29,8 +29,8 @@ Add/edit the following lines (json might be in there already):
 @load send-to-kafka
 ```
 
-json-logs ensures JSON formatting of data
-send-to-kafka is your config file for sending data to Kafka.
+* json-logs ensures JSON formatting of data
+* send-to-kafka is your config file for sending data to Kafka.
 
 #### Create Bro Config file to send to Kafka
 Create this file for Kafka logging - e.g. /usr/local/bro/share/bro/site/send-to-kafka.bro
@@ -63,7 +63,7 @@ ksql> SELECT DNS->"id.orig_h", DNS->"query", DNS->QTYPE_NAME, DNS->"id.resp_h", 
 ```
 
 Because of the STRUCT required of nested JSON, we need to use the -> operator and because of the dots in some fields,
-we need to put them in quotes.  Unsightly and problematic, because KSQL
+we need to put them in quotes.  Unsightly and problematic, but required because KSQL
 has a hard time with dots in the field names if it's not in a STRUCT.
 
 So let's create another stream that is a little prettier and easier to work with.
@@ -71,7 +71,7 @@ Perhaps this stream is formatted for your SIEM?
 * see https://github.com/berthayes/ksql_for_zeek/blob/master/create_clean_dns_stream.sql
 
 Now let's query the clean DNS stream
-Here's an example - look for IPV6 hostname lookups:
+Here's an example - look for successful IPV6 hostname lookups:
 
 ```
 ksql> SELECT SRC_IP, Q, QTYPE_NAME, DEST_IP, DEST_PORT, ANSWERS FROM CLEAN_DNS WHERE QTYPE_NAME='AAAA' AND ANSWERS IS NOT NULL;
