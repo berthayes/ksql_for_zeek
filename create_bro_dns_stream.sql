@@ -2,10 +2,10 @@ CREATE STREAM dns ( \
 dns STRUCT< \
 ts DOUBLE(16,6), \
 uid STRING, \
-"id\.orig_h" VARCHAR, \
-"id\.orig_p" INTEGER, \
-"id\.resp_h" VARCHAR, \
-"id\.resp_p" INTEGER, \
+"id.orig_h" VARCHAR, \
+"id.orig_p" INTEGER, \
+"id.resp_h" VARCHAR, \
+"id.resp_p" INTEGER, \
 proto STRING, \
 trans_id INTEGER, \
 "query" VARCHAR, \
